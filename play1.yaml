@@ -1,0 +1,7 @@
+---
+- hosts: wn
+  become: true
+  tasks:
+    - name: create file 
+      file: path=/home/Zimutail/file/text1
+      state: file
