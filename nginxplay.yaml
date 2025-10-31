@@ -1,0 +1,22 @@
+---
+- name: Install and Start NGINX
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Install NGINX
+      apt:
+        name: nginx
+        state: present
+        update_cache: yes
+
+    - name: copy index.html to nginx
+      copy:
+        src: /home/Zimutail/index.html
+        dest: /var/www/html/index.html
+    
+    - name: Start & Enable NGINX service
+      service:
+        name: nginx
+        state: started
+        enabled: yes
