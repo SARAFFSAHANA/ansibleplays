@@ -1,0 +1,6 @@
+---
+- hosts: wn
+  become: true
+  roles:
+    - bsmeding.docker  #(get this by using  ansible-galaxy role install bsmeding.docker----
+    # will be installed in default /.asible.roles folder)-then run ansible-playbook dockerplay.yaml
