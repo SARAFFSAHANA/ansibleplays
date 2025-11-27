@@ -12,7 +12,7 @@
 
     - name: copy index.html to nginx
       copy:
-        src: index.html(should be in same folder where playbook is written)
+        src: index.html #(should be in same folder where playbook is written)
         dest: /var/www/html/index.html
     
     - name: Start & Enable NGINX service
