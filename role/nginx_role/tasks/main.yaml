@@ -1,0 +1,16 @@
+    - name: Install NGINX
+      apt:
+        name: nginx
+        state: present
+        update_cache: yes
+
+    - name: copy index.html to nginx
+      copy:
+        src: files/index.html #(should be in same folder where playbook is written)
+        dest: /var/www/html/index.html
+
+    - name: Start & Enable NGINX service
+      service:
+        name: nginx
+        state: started
+        enabled: yes

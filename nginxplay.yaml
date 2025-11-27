@@ -1,6 +1,6 @@
 ---
 - name: Install and Start NGINX
-  hosts: all
+  hosts: wn
   become: true
 
   tasks:
@@ -12,7 +12,7 @@
 
     - name: copy index.html to nginx
       copy:
-        src: /home/Zimutail/index.html
+        src: index.html(should be in same folder where playbook is written)
         dest: /var/www/html/index.html
     
     - name: Start & Enable NGINX service

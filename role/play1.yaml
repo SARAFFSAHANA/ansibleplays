@@ -1,0 +1,8 @@
+---
+- name: Install and Start NGINX
+  hosts: wn
+  become: true
+  roles:
+    - nginx_role
+
+    
